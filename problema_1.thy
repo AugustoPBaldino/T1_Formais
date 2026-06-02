@@ -1,4 +1,4 @@
-theory trabalho1_formais
+theory problema_1
   imports Main
 begin
 
