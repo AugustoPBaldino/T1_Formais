@@ -1,4 +1,4 @@
-theory problema_1
+theory Problema_1_Cat
   imports Main
 begin
 
@@ -209,7 +209,7 @@ value "cat [1::nat,2] [3,4]"
 
 (* Teste 3: tamanho de lista vazia *)
 value "tamanho ([]::nat list)"
-(* Resultado esperado: 3 *)
+(* Resultado esperado: 0 *)
 
 (* Teste 4: tamanho de lista com elementos *)
 value "tamanho [10::nat,20,30]"
