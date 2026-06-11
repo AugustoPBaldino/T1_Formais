@@ -1,4 +1,4 @@
-theory problema_3_NumNodos
+theory Problema_3_NumNodos
   imports Main
 begin
 
@@ -88,85 +88,33 @@ fun numnodos :: "'a arvbin ⇒ nat" where
       = 1 + numnodos L + numnodos R"
 
 
-(*
-  ============================================================
-  CASOS DE TESTE
-  ============================================================
-*)
+(* CASOS DE TESTE *)
 
-(*
-  ------------------------------------------------------------
-  TESTE 1
-  ------------------------------------------------------------
-
-  Árvore vazia.
-*)
-
+(* Teste 1: Árvore vazia. *)
 value "numnodos (Vazia :: nat arvbin)"
+(* Resultado esperado: 0 *)
 
-(*
-  Resultado esperado:
+(* Teste 2: Árvore contendo apenas a raiz. *)
+value "numnodos ((No Vazia 10 Vazia) :: nat arvbin)"
+(* Resultado esperado: 1 *)
 
-    0
-*)
-
-
-(*
-  ------------------------------------------------------------
-  TESTE 2
-  ------------------------------------------------------------
-
-  Árvore contendo apenas a raiz.
-*)
-
-value "numnodos (No Vazia 10 Vazia)"
-
-(*
-  Resultado esperado:
-
-    1
-*)
-
-
-(*
-  ------------------------------------------------------------
-  TESTE 3
-  ------------------------------------------------------------
-
-  Árvore com três nós.
-*)
-
-value "numnodos (No (No Vazia 1 Vazia)
-                    2
-                    (No Vazia 3 Vazia))"
-
-(*
-  Resultado esperado:
-
-    3
-*)
-
-
-(*
-  ------------------------------------------------------------
-  TESTE 4
-  ------------------------------------------------------------
-
-  Árvore maior.
-*)
-
+(* Teste 3: Árvore com três nós. *)
 value "numnodos
-        (No
-          (No (No Vazia 1 Vazia)
-              2
-              Vazia)
-          3
-          (No Vazia 4 Vazia))"
+  ((No (No Vazia 1 Vazia)
+       2
+       (No Vazia 3 Vazia))
+   :: nat arvbin)"
+(* Resultado esperado: 3 *)
 
-(*
-  Resultado esperado:
-
-    4
-*)
+(* Teste 4: Árvore maior. *)
+value "numnodos
+  ((No
+      (No (No Vazia 1 Vazia)
+          2
+          Vazia)
+      3
+      (No Vazia 4 Vazia))
+   :: nat arvbin)"
+ (* Resultado esperado: 4*)
 
 end

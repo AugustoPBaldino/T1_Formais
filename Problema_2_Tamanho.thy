@@ -77,97 +77,26 @@ fun tamanho :: "'a list ⇒ nat" where
   "tamanho (h # t) = Suc (tamanho t)"
 
 
-(*
-  ============================================================
-  CASOS DE TESTE
-  ============================================================
-*)
+(* CASOS DE TESTE*)
 
-(*
-  ------------------------------------------------------------
-  TESTE 1
-  ------------------------------------------------------------
-
-  Tamanho da lista vazia.
-*)
-
+(* Teste 1:   Tamanho da lista vazia. *)
 value "tamanho ([]::nat list)"
+(* Resultado esperado: 0 *)
 
-(*
-  Resultado esperado:
-
-    0
-*)
-
-
-(*
-  ------------------------------------------------------------
-  TESTE 2
-  ------------------------------------------------------------
-
-  Lista contendo apenas um elemento.
-*)
-
+(* Teste 2: Lista contendo apenas um elemento. *)
 value "tamanho ([10]::nat list)"
+(* Resultado esperado: 1 *)
 
-(*
-  Resultado esperado:
-
-    1
-*)
-
-
-(*
-  ------------------------------------------------------------
-  TESTE 3
-  ------------------------------------------------------------
-
-  Lista contendo vários elementos.
-*)
-
+(* Teste 3: Lista contendo vários elementos. *)
 value "tamanho ([1,2,3,4,5]::nat list)"
+(* Resultado esperado: 5 *)
 
-(*
-  Resultado esperado:
-
-    5
-*)
-
-
-(*
-  ------------------------------------------------------------
-  TESTE 4
-  ------------------------------------------------------------
-
-  Lista de strings.
-
-  Demonstra que a função é genérica
-  e funciona para qualquer tipo.
-*)
-
+(* Teste 4:  Lista de strings. Demonstra que a função é genérica e funciona para qualquer tipo. *)
 value "tamanho ([''a'', ''b'', ''c'']::string list)"
+(* Resultado esperado: 3 *)
 
-(*
-  Resultado esperado:
-
-    3
-*)
-
-
-(*
-  ------------------------------------------------------------
-  TESTE 5
-  ------------------------------------------------------------
-
-  Lista de valores booleanos.
-*)
-
+(* Teste 5: Lista de valores booleanos. *)
 value "tamanho ([True, False, True]::bool list)"
-
-(*
-  Resultado esperado:
-
-    3
-*)
+(* Resultado esperado: 3 *)
 
 end
